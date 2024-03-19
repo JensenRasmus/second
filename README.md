@@ -2,7 +2,9 @@
 
 ## About
 
-These files contain the files, which are either to replace standard files in the Manopt package for Matlab, or used by ```numerical_examples.m```
+This is the files associated to the preprint *Riemannian optimization on the symplectic Stiefel manifold using second order information*, by Rasmus Jensen and Ralf Zimmermann.
+
+These files are either to replace standard files in the Manopt package for Matlab, or used by ```numerical_examples.m```. 
  
 ## List of files
 - ```numerical_experiments.m```: Run the experiments by uncommenting selected parts of the code. One defines a problem structure similar to how it is done in Manopt [1], and data is subsequently captured. 
@@ -12,9 +14,9 @@ These files contain the files, which are either to replace standard files in the
 - ```williasondiag.m```: Computes the symplectic eigenvalue decomposition. This file is part of the work [2] 
 
 ## References
-[1]: Manopt, a Matlab Toolbox for Optimization on Manifolds, Nicolas Boumal et.al., Journal of Machine Learning Research, 2014. [Website](https://www.manopt.org)
+[1]: *Manopt, a Matlab Toolbox for Optimization on Manifolds*, Nicolas Boumal et.al., Journal of Machine Learning Research, 2014. [Website](https://www.manopt.org)
 
-[2]: Riemannian Optimization on the Symplectic Stiefel Manifold, Bin Gao, Nguyen Thanh Son, P.-A. Absil,Tatjana Stykel, SIAM Journal on Matrix Analysis and Applications, 2021. Source code is found [Here](https://github.com/opt-gaobin/spopt)
+[2]: *Riemannian Optimization on the Symplectic Stiefel Manifold*, Bin Gao, Nguyen Thanh Son, P.-A. Absil,Tatjana Stykel, SIAM Journal on Matrix Analysis and Applications, 2021. Source code is found [Here](https://github.com/opt-gaobin/spopt)
 
 ## Copyright
 
