@@ -13,6 +13,7 @@ These files contain the files, which are either to replace standard files in the
 
 ## References
 [1]: Manopt, a Matlab Toolbox for Optimization on Manifolds, Nicolas Boumal et.al., Journal of Machine Learning Research, 2014. [Website](https://www.manopt.org)
+
 [2]: Riemannian Optimization on the Symplectic Stiefel Manifold, Bin Gao, Nguyen Thanh Son, P.-A. Absil,Tatjana Stykel, SIAM Journal on Matrix Analysis and Applications, 2021. Source code is found [Here](https://github.com/opt-gaobin/spopt)
 
 ## Copyright
