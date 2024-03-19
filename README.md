@@ -12,4 +12,4 @@ These files contain the files, which are either to replace standard files in the
 - ```williasondiag.m```: Computes the symplectic eigenvalue decomposition. This file is park of the work [1] 
 
 ## References
-[1]: Riemannian Optimization on the Symplectic Stiefel Manifold Bin Gao, Nguyen Thanh Son, P.-A. Absil,Tatjana Stykel, SIAM Journal on Matrix Analysis and Applications, 2021. Source code is found (Here)[https://github.com/opt-gaobin/spopt]
+[1]: Riemannian Optimization on the Symplectic Stiefel Manifold Bin Gao, Nguyen Thanh Son, P.-A. Absil,Tatjana Stykel, SIAM Journal on Matrix Analysis and Applications, 2021. Source code is found [Here](https://github.com/opt-gaobin/spopt)
