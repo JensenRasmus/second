@@ -11,7 +11,7 @@ These files are either to replace standard files in the Manopt package for Matla
 - ```optim_sd.m``` and ```optim_cg.m```: The steepest descend- and conjugate gradient method.
 - ```trustregions.m```: Replace this with the corresponding file Manopt to enable the use of  ```symplecticStiefelfactory.m```.
 - ```symplecticStiefelfactory.m```: Implemented manifold structure. Note that this is not fully compatible with the standard implementation of Manopt, but this can be done editing a few lines in the solvers one wants to use. ```trustregions.m``` above is compatible. One can check out ```stiefelFactory.m``` in Manopt for a comparison. 
-- ```williasondiag.m```: Computes the symplectic eigenvalue decomposition. This file is part of the work [2] 
+- ```williasondiag.m```: Computes the symplectic eigenvalue decomposition. This file is part of the work [2]. 
 
 ## References
 [1]: *Manopt, a Matlab Toolbox for Optimization on Manifolds*, Nicolas Boumal et.al., Journal of Machine Learning Research, 2014. [Website](https://www.manopt.org)
@@ -20,7 +20,7 @@ These files are either to replace standard files in the Manopt package for Matla
 
 ## Copyright
 
-Copyright (C) 2024, Rasmus Jensen and Ralf Zimmermann 
+Copyright (C) 2024, Rasmus Jensen and Ralf Zimmermann.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
