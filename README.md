@@ -4,10 +4,10 @@
 
 This is the files associated to the preprint *Riemannian optimization on the symplectic Stiefel manifold using second order information*, by Rasmus Jensen and Ralf Zimmermann.
 
-These files are either to replace standard files in the Manopt package for Matlab, or used by ```numerical_examples.m```. 
+These files are either to replace standard files in the Manopt package for Matlab [1], or used by ```numerical_examples.m```. 
  
 ## List of files
-- ```numerical_experiments.m```: Run the experiments by uncommenting selected parts of the code. One defines a problem structure similar to how it is done in Manopt [1], and data is subsequently captured. 
+- ```numerical_experiments.m```: Run the experiments by uncommenting selected parts of the code. One defines a problem structure similar to how it is done in Manopt, and data is subsequently captured. 
 - ```optim_sd.m``` and ```optim_cg.m```: The steepest descend- and conjugate gradient method.
 - ```trustregions.m```: Replace this with the corresponding file Manopt to enable the use of  ```symplecticStiefelfactory.m```.
 - ```symplecticStiefelfactory.m```: Implemented manifold structure. Note that this is not fully compatible with the standard implementation of Manopt, but this can be done editing a few lines in the solvers one wants to use. ```trustregions.m``` above is compatible. One can check out ```stiefelFactory.m``` in Manopt for a comparison. 
