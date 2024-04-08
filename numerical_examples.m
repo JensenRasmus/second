@@ -95,7 +95,7 @@ end
 
 varNames = ["itterations", "runtime (s)", "Grad norm at end", "Feasibility", "f(x^*)"];
 rowNames = ["10","50","100"];
-T1 = table(num_iter_r_sd',runtime_r_sd',grad_norm_r_sd',feasibility_r_sd',f_val_r_tr', 'rownames',rowNames,'Variablenames',varNames);
+T1 = table(num_iter_r_sd',runtime_r_sd',grad_norm_r_sd',feasibility_r_sd',f_val_r_sd', 'rownames',rowNames,'Variablenames',varNames);
 
 T2 = table(num_iter_r_cg',runtime_r_cg',grad_norm_r_cg',feasibility_r_cg',f_val_r_cg', 'rownames',rowNames,'Variablenames',varNames);
 
