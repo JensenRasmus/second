@@ -116,7 +116,9 @@ function M = symplecticStiefelfactory(n,p,type)
     function g = Gamma(U,eta)
     % Compute the Christoffel function when the twp inputs are the same
         omega = M.barOmega(U,eta);
-        g = -(omega-omega') * (eta + omega'*U)-(omega')^2*U;
+        %g = -(omega-omega') * (eta + omega'*U)-(omega')^2*U;
+        OTU = omega' * U;
+        g = -(omega-omega') * (eta + OTU)-omega'*OTU;
     end
     function hess = ehesstorhess(U,eg,eh,v)
         % For manopt routines this should be enabled. They are essentially
@@ -143,6 +145,7 @@ function M = symplecticStiefelfactory(n,p,type)
         FYY = ehess * (U'*U) + egrad*v' * U + (egrad)* U' * v + ...
             -(M.Plus(egrad*v')  + M.Plus(ehess*U'))*U - M.Plus(egrad * U') * v;
         hess = FYY + 1/4 * (N1^2*Gamma(U,(grad +v)/N1)-norm_gradmv^2*Gamma(U,(grad-v)/norm_gradmv));
+
     end
     
     M.retr_right_inv = @retraction_right_inv;
