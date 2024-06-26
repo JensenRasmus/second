@@ -108,17 +108,27 @@ function M = symplecticStiefelfactory(n,p,type)
     M.barOmega = @barOmega;
     function Om = barOmega(U,Delta)
         Q = U/(U'*U);
+        
         X = -M.Plus(Delta*Q');
-        Om = Delta*Q' + X - X*Q*U';
-    end
-    M.ehess2rhess = @ehesstorhess;
+        Om = Delta*Q' + X - (X*Q)*U';
 
+    end
+    %M.ehess2rhess = @ehesstorhess;
+    M.ehess2rhess = @ehesstorhess2;
     function g = Gamma(U,eta)
     % Compute the Christoffel function when the twp inputs are the same
+        % tic;
         omega = M.barOmega(U,eta);
+        % toc;
         %g = -(omega-omega') * (eta + omega'*U)-(omega')^2*U;
         OTU = omega' * U;
+        
         g = -(omega-omega') * (eta + OTU)-omega'*OTU;
+        
+        % tic;
+        % g2 = (-omega + omega' ) * eta - omega * (OTU);
+        % toc
+        % norm(g - g2)
     end
     function hess = ehesstorhess(U,eg,eh,v)
         % For manopt routines this should be enabled. They are essentially
@@ -142,12 +152,29 @@ function M = symplecticStiefelfactory(n,p,type)
         %       M.J(n) * v * (egrad)' * M.J(n) * U + ...
         %       M.J(n) * U *(ehess)' * M.J(n) * U + ...
         %       M.J(n) * U * (egrad)' * M.J(n) * v;
-        FYY = ehess * (U'*U) + egrad*v' * U + (egrad)* U' * v + ...
+        
+        VTU = v' * U; % Update May 24'
+        
+        FYY = ehess * (U'*U) + egrad*VTU + (egrad)* VTU' + ...
             -(M.Plus(egrad*v')  + M.Plus(ehess*U'))*U - M.Plus(egrad * U') * v;
+        
         hess = FYY + 1/4 * (N1^2*Gamma(U,(grad +v)/N1)-norm_gradmv^2*Gamma(U,(grad-v)/norm_gradmv));
-
     end
     
+    function approxHess = ehesstorhess2(U,eg,eh,v)
+        eg = @(U) eg;
+        eh = @(U,v) eh;
+        
+        egrad = eg(U);
+        ehess = eh(U,v);
+ 
+        VTU = v' * U; 
+        
+        FYY = ehess * (U'*U) + egrad*VTU + (egrad)* VTU' + ...
+            -(M.Plus(egrad*v')  + M.Plus(ehess*U'))*U - M.Plus(egrad * U') * v;
+    
+        approxHess = M.tangent(U,FYY);
+    end
     M.retr_right_inv = @retraction_right_inv;
     function [ret,storage] = retraction_right_inv(U,eta,t)
         if ~exist('t', 'var')|| isempty(t)
